@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
 
-const login = (isLoggedIn,setIsLoggedIn) => {
+const Login = ({isLoggedIn,setIsLoggedIn}) => {
 
     const [data,setData]=useState({username:'',password:''});
 
-    const handleChange = e =>{
+    const handleChange = (e) =>{
 
         setData({...data,[e.target.name]: e.target.value});
     };
@@ -13,8 +13,8 @@ const login = (isLoggedIn,setIsLoggedIn) => {
       {isLoggedIn ? (<p>You are logged in! </p>):(
       <from>
         <div>
-            <label htmlFor="username">username:</label>
-            <input type="text" id="username" name="Username" value={data.username}onChange={handleChange}/>
+            <label htmlFor="username">Username:</label>
+            <input type="text" id="username" name="username" value={data.username}onChange={handleChange}/>
         </div>
         <div>
             <label htmlFor="password">Password:</label>
@@ -28,4 +28,4 @@ const login = (isLoggedIn,setIsLoggedIn) => {
   );
 };
 
-export default login;
+export default Login;
